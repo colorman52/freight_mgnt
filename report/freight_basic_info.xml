@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<openerp>
+    <data>
+        
+        <report auto="False"
+                id="freight_info"
+                model="shipment.shipment"
+                name="freight.basic.info"
+                file="feight/report/freight_basic_html.mako"
+                string="Carta Porte"
+                report_type="webkit"
+                webkit_header="shipment_tracking.ir_header_webkit_shipment"
+                usage="default"
+                menu="True"
+        />
+
+        <record id="property_freight_basic_report_webkit" model="ir.property">
+            <field name="name">webkit_freight_header</field>
+            <field name="fields_id" ref="report_webkit.field_ir_act_report_xml_webkit_header"/>
+            <field eval="'ir.header_webkit,'+str(ref('shipment_tracking.ir_header_webkit_shipment'))" model="ir.header_webkit" name="value"/>
+            <field eval="'ir.actions.report.xml,'+str(ref('freight_management.freight_basic_info'))" model="ir.actions.report.xml" name="res_id"/>
+        </record>
+
+        <!-- <record id="shipment_baic_info_tamplate" model="email.template">
+            <field name="name">Embarque</field>
+            <field name="auto_delete">1</field>
+            <field name="report_template" ref="shipment_shipment_basic_info"/>
+        </record> -->
+
+    </data>
+</openerp>

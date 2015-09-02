@@ -1,0 +1,483 @@
+id,name,code,country_id/id
+city.auh,ABU DHABI,AUH,base.ae
+city.dxb,DUBAI,DXB,base.ae
+city.shj,SHARJAH,SHJ,base.ae
+city.kbl,KABUL,KBL,base.af
+city.tia,TIRANA,TIA,base.al
+city.aua,ARUBA,AUA,base.an
+city.bon,BONAIRE,BON,base.an
+city.cur,CURA?AO,CUR,base.an
+city.sxm,ST. MAARTEN,SXM,base.an
+city.lad,LUANDA,LAD,base.ao
+city.bhi,BAHIA BLANCA,BHI,base.ar
+city.bue,BUENOS AIRES,BUE,base.ar
+city.ush,USUAHIA,USH,base.ar
+city.grz,GRAZ,GRZ,base.at
+city.klu,KLAGENFURT,KLU,base.at
+city.lnz,LINZ,LNZ,base.at
+city.szg,SALZBURGO,SZG,base.at
+city.vie,VIENA,VIE,base.at
+city.adl,ADELAIDA,ADL,base.au
+city.cns,CAIRNS,CNS,base.au
+city.cbr,CAMBERRA,CBR,base.au
+city.hba,HOBART,HBA,base.au
+city.mel,MELBOURNE,MEL,base.au
+city.per,PERTH,PER,base.au
+city.syd,SYDNEY,SYD,base.au
+city.sjj,SARAJEVO,SJJ,base.ba
+city.bgi,BARBADOS,BGI,base.bb
+city.dac,DHAKA,DAC,base.bd
+city.anr,ANTWERP,ANR,base.be
+city.bru,BRUSELAS,BRU,base.be
+city.sof,SOFIA,SOF,base.bg
+city.bah,BAHRAIN,BAH,base.bh
+city.bjm,BUJUMBURA,BJM,base.bi
+city.coo,COTONOU,COO,base.bj
+city.bda,BERMUDA,BDA,base.bm
+city.bwn,BANDAR SERI,BWN,base.bn
+city.cbb,COCHABAMBA,CBB,base.bo
+city.lpb,LA PAZ,LPB,base.bo
+city.srz,SANTA CRUZ DE LA SIERRA,SRZ,base.bo
+city.tja,TARIJA,TJA,base.bo
+city.aju,ARACAJU,AJU,base.br
+city.bel,BELEM,BEL,base.br
+city.bhz,BELO HORIZONTE,BHZ,base.br
+city.bsb,BRASILIA,BSB,base.br
+city.bzc,BUZIOS,BZC,base.br
+city.cgb,CUIABA,CGB,base.br
+city.cwb,CURITIBA,CWB,base.br
+city.fln,FLORIANOPOLIS,FLN,base.br
+city.for,FORTALEZA,FOR,base.br
+city.igu,FOZ DO IGUA?U,IGU,base.br
+city.gyn,GOIANIA,GYN,base.br
+city.ios,ILHEUS,IOS,base.br
+city.ibb,IMBITUBA,IBB,base.br
+city.jpa,JOAO PESSOA,JPA,base.br
+city.mcz,MACEIO,MCZ,base.br
+city.mao,MANAOS,MAO,base.br
+city.nat,NATAL,NAT,base.br
+city.png,PARANAGUA,PNG,base.br
+city.poa,PORTO ALEGRE,POA,base.br
+city.rec,RECIFE,REC,base.br
+city.rio,RIO DE JANEIRO,RIO,base.br
+city.ssa,SALVADOR,SSA,base.br
+city.slz,SAN LUIS,SLZ,base.br
+city.sao,SAN PABLO,SAO,base.br
+city.ssz,SANTOS,SSZ,base.br
+city.qfs,SAO FRANCISCO DO SUL,QFS,base.br
+city.vix,VITORIA,VIX,base.br
+city.fpo,FREEPORT ,FPO,base.bs
+city.nas,NASSAU,NAS,base.bs
+city.gbe,GABORONE,GBE,base.bw
+city.bze,BELICE,BZE,base.bz
+city.yyc,CALGARY,YYC,base.ca
+city.yeg,EDMONTON,YEG,base.ca
+city.yul,MONTREAL,YUL,base.ca
+city.yow,OTTAWA,YOW,base.ca
+city.yto,TORONTO,YTO,base.ca
+city.yvr,VANCOUVER,YVR,base.ca
+city.yyj,VICTORIA,YYJ,base.ca
+city.yqg,WINDSOR,YQG,base.ca
+city.ywg,WINNIPEG,YWG,base.ca
+city.bgf,BANGUI,BGF,base.cf
+city.bzv,BRAZZAVILLE,BZV,base.cg
+city.bsl,BASILEA,BSL,base.ch
+city.brn,BERNA,BRN,base.ch
+city.gva,GINEBRA,GVA,base.ch
+city.zrh,ZURICH,ZRH,base.ch
+city.abj,ABIDJAN,ABJ,base.ci
+city.anf,ANTOFAGASTA,ANF,base.cl
+city.ari,ARICA,ARI,base.cl
+city.iqq,IQUIQUE,IQQ,base.cl
+city.ipc,IS. DE PASCUA,IPC,base.cl
+city.lsc,LA SERENA,LSC,base.cl
+city.lqn,LIRQUEN,LQN,base.cl
+city.pmc,PUERTO MONTT,PMC,base.cl
+city.puq,PUNTA ARENAS,PUQ,base.cl
+city.scl,SANTIAGO DE CHILE,SCL,base.cl
+city.sai,SAN ANTONIO,SAI,base.cl
+city.sve,SAN VICENTE,SVE,base.cl
+city.tho,TALCAHUANO,THO,base.cl
+city.zco,TEMUCO,ZCO,base.cl
+city.vap,VALPARAISO,VAP,base.cl
+city.dla,DOUALA,DLA,base.cm
+city.yao,YAOUNDE,YAO,base.cm
+city.bjs,BEIJING,BJS,base.cn
+city.cwn,CHIWAN,CWN,base.cn
+city.dlc,DALIAN,DLC,base.cn
+city.can,GUANGZHOU (CANTON),CAN,base.cn
+city.hpu,HUANGPU,HPU,base.cn
+city.ngb,NINGBO,NGB,base.cn
+city.tao,QINGDAO,TAO,base.cn
+city.ssh ,SANSHAN (NANHAI),SSH ,base.cn
+city.sha,SHANGHAI (HONGQIAO),SHA,base.cn
+city.pvg,SHANGHAI (PUDONG),PVG,base.cn
+city.szx,SHENZHEN,SZX,base.cn
+city.xmn,XIAMEN,XMN,base.cn
+city.ytn,YANTIAN,YTN,base.cn
+city.baq,BARRANQUILLA,BAQ,base.co
+city.bog,BOGOTA,BOG,base.co
+city.bun,BUENAVENTURA,BUN,base.co
+city.clo,CALI,CLO,base.co
+city.ctg,CARTAGENA,CTG,base.co
+city.mde,MEDELLIN,MDE,base.co
+city.adz,SAN ANDRES IS.,ADZ,base.co
+city.smr,SANTA MARTA,SMR,base.co
+city.cal,PUERTO CALDERA,CAL,base.cr
+city.lio,PUERTO LIMON,LIO,base.cr
+city.sjo,SAN JOSE ( C. R. ),SJO,base.cr
+city.cyo,CAYO LARGO DEL SUR,CYO,base.cu
+city.avi,CIEGO DE AVILA,AVI,base.cu
+city.hog,HOLGUIN,HOG,base.cu
+city.hav,LA HABANA,HAV,base.cu
+city.mzo,MANZANILLO,MZO,base.cu
+city.vra,VARADERO,VRA,base.cu
+city.sid,ILHA DO SAL,SID,base.cv
+city.lca,LARNACA,LCA,base.cy
+city.nic,NICOSIA,NIC,base.cy
+city.pfo,PAPHOS,PFO,base.cy
+city.prg,"ISLA MADEIRA, PRAGA",PRG,base.cz
+city.ver,BERLIN,VER,base.de
+city.bre,BREMENHAVEN,BRE,base.de
+city.cgn,COLONIA/BONN,CGN,base.de
+city.drs,DRESDE,DRS,base.de
+city.dus,DUSSELDORF,DUS,base.de
+city.fra,FRANKFURT,FRA,base.de
+city.ham,HAMBURGO,HAM,base.de
+city.lej,LEIPZIG,LEJ,base.de
+city.muc,MUNICH,MUC,base.de
+city.str,STUTTGART,STR,base.de
+city.jib,YIBUTI,JIB,base.dj
+city.cph,COPENHAGUE,CPH,base.dk
+city.cau,CAUCEDO,CAU,base.do
+city.puj,PUNTA CANA,PUJ,base.do
+city.sdq,SANTO DOMINGO,SDQ,base.do
+city.alg,ARGEL,ALG,base.dz
+city.gye,GUAYAQUIL,GYE,base.ec
+city.uio,QUITO,UIO,base.ec
+city.aly,ALEJANDRIA,ALY,base.eg
+city.cai,CAIRO,CAI,base.eg
+city.asm,ASMARA,ASM,base.er
+city.alc,ALICANTE,ALC,base.es
+city.lei,ALMEIRA,LEI,base.es
+city.bcn,BARCELONA,BCN,base.es
+city.bio,BILBAO,BIO,base.es
+city.fue,"FUERTE VENTURA, ISLAS CANARIAS",FUE,base.es
+city.lpa,"GRAN CANARIA, ISLAS CANARIAS",LPA,base.es
+city.ibz,IBIZA,IBZ,base.es
+city.lcg,LA CORU½A,LCG,base.es
+city.ace,"LANZAROTE, ISLAS CANARIAS",ACE,base.es
+city.mad,MADRID,MAD,base.es
+city.agp,MALAGA,AGP,base.es
+city.mah,MENORCA,MAH,base.es
+city.mjv,MURCIA,MJV,base.es
+city.ovd,OVIEDO,OVD,base.es
+city.pmi,PALMA DE MALLORCA,PMI,base.es
+city.pna,PAMPLONA,PNA,base.es
+city.sdr,SANTANDER,SDR,base.es
+city.scq,SANTIAGO DE COMPOSTERA,SCQ,base.es
+city.svq,SEVILLA,SVQ,base.es
+city.tci,"TENERIFE, ISLAS CANARIAS",TCI,base.es
+city.vlc,VALENCIA,VLC,base.es
+city.vgo,VIGO,VGO,base.es
+city.vit,VITORIA,VIT,base.es
+city.zaz,ZARAGOZA,ZAZ,base.es
+city.add,ADDIS ABABA,ADD,base.et
+city.dir,DIRE DAWA,DIR,base.et
+city.hel,HELSINKI,HEL,base.fi
+city.nan,NADI,NAN,base.fj
+city.suv,SUVA,SUV,base.fj
+city.bod,BORDEAUX,BOD,base.fr
+city.sxb,ESTRASBURGO,SXB,base.fr
+city.lhv,LE HAVRE,LHV,base.fr
+city.lil,LILLE,LIL,base.fr
+city.lys,LYON,LYS,base.fr
+city.mrs,MARSELLA,MRS,base.fr
+city.mlh,MULHOUSE,MLH,base.fr
+city.nce,NIZA,NCE,base.fr
+city.par,PARIS,PAR,base.fr
+city.run,"ST. DENIS, ISLA REUNION",RUN,base.fr
+city.lbv,LIBREVILLE,LBV,base.ga
+city.gnd,GRANADA,GND,base.gd
+city.cay,CAYENNE,CAY,base.gf
+city.acc,ACCRA,ACC,base.gh
+city.bjl,BANJUL,BJL,base.gm
+city.cky,CONAKRY,CKY,base.gn
+city.ptp,POINTE A PRITE,PTP,base.gp
+city.sfg,ST. MARTIN,SFG,base.gp
+city.arh,ATENAS,ARH,base.gr
+city.gua,GUATEMALA,GUA,base.gt
+city.prq,PUERTO QUETZAL ,PRQ,base.gt
+city.geo,GEORGETOWN,GEO,base.gy
+city.hkg,HONG KONG,HKG,base.hk
+city.pcr,PUERTO CORTES,PCR,base.hn
+city.sap,SAN PEDRO SULA,SAP,base.hn
+city.tgu,TEGUCIGALPA,TGU,base.hn
+city.dbv,DUBROBVNIK,DBV,base.hr
+city.zag,ZAGREB,ZAG,base.hr
+city.pap,PORT AU PRINCE,PAP,base.ht
+city.bud,BUDAPEST,BUD,base.hu
+city.dps,DENPASAR,DPS,base.id
+city.jkt,JAKARTA,JKT,base.id
+city.dub,DUBLIN,DUB,base.ie
+city.snn,SHANNON,SNN,base.ie
+city.jrs,JERUSALEM,JRS,base.il
+city.tlv,TEL AVIV,TLV,base.il
+city.bom,BOMBAY,BOM,base.in
+city.ccu,CALCUTA,CCU,base.in
+city.del,DELHI,DEL,base.in
+city.maa,MADRAS,MAA,base.in
+city.bgw,BAGHDAD,BGW,base.iq
+city.bsr,BASRA,BSR,base.iq
+city.abd,ABADAN,ABD,base.ir
+city.thr,TEHERAN,THR,base.ir
+city.rek,REYKJAVYK,REK,base.is
+city.bri,BARI,BRI,base.it
+city.blq,BOLONIA,BLQ,base.it
+city.flr,FLORENCIA,FLR,base.it
+city.mil,MILAN,MIL,base.it
+city.nap,NAPOLES,NAP,base.it
+city.pmo,PALERMO,PMO,base.it
+city.rom,ROMA,ROM,base.it
+city.spe,SPEZIA,SPE,base.it
+city.trn,TORINO,TRN,base.it
+city.kin,KINGSTON,KIN,base.jm
+city.mbj,MONTEGO BAY,MBJ,base.jm
+city.amm,AMMAN,AMM,base.jo
+city.fuk,FUKUOKA,FUK,base.jp
+city.ngo,NAGOYA,NGO,base.jp
+city.oka,OKINAWA,OKA,base.jp
+city.osa,OSAKA,OSA,base.jp
+city.tyo,TOKIO,TYO,base.jp
+city.yok,YOKOHAMA,YOK,base.jp
+city.nbo,NAIROBI,NBO,base.ke
+city.yva,MORONI,YVA,base.km
+city.sel,SEUL,SEL,base.kr
+city.pus,BUSAN,PUS,base.kr
+city.kwi,KUWAIT,KWI,base.kw
+city.bey,BEIRUT,BEY,base.lb
+city.slu,SANTA LUCIA,SLU,base.lc
+city.cmb,COLOMBO,CMB,base.lk
+city.mlw,MONROVIA,MLW,base.lr
+city.lux,LUXEMBURGO,LUX,base.lu
+city.ben,BENGHAZI,BEN,base.ly
+city.kye,TRIPOLI,KYE,base.ly
+city.cas,CASABLANCA,CAS,base.ma
+city.rak,MARRAKECH,RAK,base.ma
+city.tng,TANGER,TNG,base.ma
+city.rba,RABAT,RBA,base.ma
+city.tnr,ANTANANARIVO,TNR,base.mg
+city.bko,BAMAKO,BKO,base.ml
+city.uln,ULAN BATOR,ULN,base.mn
+city.fdf,FORT DE FRANCE,FDF,base.mq
+city.nkc,NOUAKCHOTT,NKC,base.mr
+city.mla,MALTA,MLA,base.mt
+city.mru,MAURICIO,MRU,base.mu
+city.blz,BLANTYRE,BLZ,base.mw
+city.llw,LILONGWE,LLW,base.mw
+city.alt,ALTAMIRA,ALT,base.mx
+city.cun,CANCUN,CUN,base.mx
+city.czm,COZUMEL,CZM,base.mx
+city.gdl,GUADALAJARA,GDL,base.mx
+city.gym,GUAYMAS,GYM,base.mx
+city.zih,IXTAPA,ZIH,base.mx
+city.lzc,LAZARO CARDENAS,LZC,base.mx
+city.zlo,MANZANILLO,ZLO,base.mx
+city.mzt,MAZATLAN,MZT,base.mx
+city.mid,MERIDA,MID,base.mx
+city.mex,CIUDAD DE MEXICO,MEX,base.mx
+city.mty,MONTERREY,MTY,base.mx
+city.pgo,PUERTO PROGRESO,PGO,base.mx
+city.pvr,PUERTO VALLARTA,PVR,base.mx
+city.tam,TAMPICO,TAM,base.mx
+city.pms,PUERTO MORELOS,PMS,base.mx
+city.pms,PUERTO MORELOS,PMS,base.mx
+city.kul,KUALA LUMPUR,KUL,base.my
+city.pen,PENANG,PEN,base.my
+city.mpm,MAPUTO,MPM,base.mz
+city.wdh,WINDHOEK,WDH,base.na
+city.kan,KANO,KAN,base.ng
+city.los,LAGOS,LOS,base.ng
+city.nim,NIAMEY,NIM,base.ng
+city.cio,CORINTO,CIO,base.ni
+city.mga,MANAGUA,MGA,base.ni
+city.ams,AMSTERDAM,AMS,base.nl
+city.bgo,BERGEN,BGO,base.no
+city.krs,KRISTIANSAND,KRS,base.no
+city.osl,OSLO,OSL,base.no
+city.svg,STAVANGER,SVG,base.no
+city.ktm,KATMANDU,KTM,base.np
+city.akl,AUCKLAND,AKL,base.nz
+city.chc,CHRISTCHURCH,CHC,base.nz
+city.wlg,WELLINGTON,WLG,base.nz
+city.mct,MUSCAT,MCT,base.om
+city.onx,COLON ,ONX,base.pa
+city.mit,MANZANILLO,MIT,base.pa
+city.pty,PANAMA,PTY,base.pa
+city.aqp,AREQUIPA,AQP,base.pe
+city.ayp,AYACUCHO,AYP,base.pe
+city.cll,CALLAO,CLL,base.pe
+city.cix,CHICLAYO,CIX,base.pe
+city.chm,CHIMBOTE,CHM,base.pe
+city.ilo,ILO,ILO,base.pe
+city.iqt,IQUITOS,IQT,base.pe
+city.jul,JULIACA,JUL,base.pe
+city.lim,LIMA,LIM,base.pe
+city.mri,MATARANI,MRI,base.pe
+city.pai,PAITA,PAI,base.pe
+city.piu,PIURA,PIU,base.pe
+city.pcl,PUCALPA,PCL,base.pe
+city.pem,PUERTO MALDONADO,PEM,base.pe
+city.tcq,TACNA,TCQ,base.pe
+city.tpp,TARAPOTO,TPP,base.pe
+city.tru,TRUJILLO,TRU,base.pe
+city.tbp,TUMBES,TBP,base.pe
+city.ppt,PAPEETE,PPT,base.pf
+city.mnl,MANILA,MNL,base.ph
+city.isb,ISLAMABAD,ISB,base.pk
+city.khi,KARACHI,KHI,base.pk
+city.waw,VARSOVIA,WAW,base.pl
+city.sju,SAN JUAN ( P. R ),SJU,base.pr
+city.fao,FARO,FAO,base.pt
+city.fnc,FUNCHAL ISLA MADEIRA,FNC,base.pt
+city.hor,"HORTA, ISLAS AZORES",HOR,base.pt
+city.lis,LISBOA,LIS,base.pt
+city.opo,OPORTO,OPO,base.pt
+city.pdl,"POINTE DELGADO, AZORES",PDL,base.pt
+city.pxo,"PORTO SANTO, ISLA MADERA",PXO,base.pt
+city.sie,SINES,SIE,base.pt
+city.ter,"TERCEIRA, ISLAS AZORES",TER,base.pt
+city.asu,ASUNCION,ASU,base.py
+city.doh,DOHA,DOH,base.qa
+city.buh,BUCAREST,BUH,base.ro
+city.tsr,TIMISOARA,TSR,base.ro
+city.aba,ABAKAN,ABA,base.ru
+city.mow,MOSCU,MOW,base.ru
+city.kgl,KIGALI,KGL,base.rw
+city.dha,DHAHRAN,DHA,base.sa
+city.jed,JEDDAH,JED,base.sa
+city.ruh,RIYADH,RUH,base.sa
+city.sez,MAHE ISLAND,SEZ,base.sc
+city.krt,KHARTOUM,KRT,base.sd
+city.sto,ESTOCOLMO,STO,base.se
+city.got,GOTEMBURGO,GOT,base.se
+city.mma,MALMO,MMA,base.se
+city.sin,SINGAPUR,SIN,base.sg
+city.lju,LJUBLJANA,LJU,base.si
+city.bts,BRATISLAVA,BTS,base.sk
+city.fna,FREETOWN,FNA,base.sl
+city.dkr,DAKAR,DKR,base.sn
+city.mgq,MOGADISHU,MGQ,base.so
+city.pbm,PARAMARIBO,PBM,base.sr
+city.sal,SAN SALVADOR,SAL,base.sv
+city.alp,ALEPPO,ALP,base.sy
+city.dam,DAMASCO,DAM,base.sy
+city.ndj,N?DJAMENA,NDJ,base.td
+city.lfw,LOME,LFW,base.tg
+city.hkt,PHUKET,HKT,base.th
+city.bkk,BANGKOK,BKK,base.th
+city.tun,TUNEZ,TUN,base.tn
+city.tbu,TONGATAPU,TBU,base.to
+city.ank,ANKARA,ANK,base.tr
+city.ayt,ANTALYA,AYT,base.tr
+city.izm,ESMIRNA,IZM,base.tr
+city.ist,ESTAMBUL,IST,base.tr
+city.pos,"PUERTO ESPA½A, ISLA MADEIRA",POS,base.tt
+city.khh,KAOHSIUNG,KHH,base.tw
+city.tpe,TAIPEI,TPE,base.tw
+city.dar,DAR ES SALAAM,DAR,base.tz
+city.iev,KIEV,IEV,base.ua
+city.ods,ODESA,ODS,base.ua
+city.ebb,ENTEBBE KAMPALA,EBB,base.ug
+city.bhd,BELFAST,BHD,base.uk
+city.ema,EAST MIDLANDS,EMA,base.uk
+city.edi,EDIMBURGO,EDI,base.uk
+city.gib,GIBRALTAR,GIB,base.uk
+city.gla,GLASGOW,GLA,base.uk
+city.lba,LEEDS,LBA,base.uk
+city.lon,LONDRES,LON,base.uk
+city.mme,TEESSIDE,MME,base.uk
+city.flx,FELIXSTOWE,FLX,base.uk
+city.anc,ANCHORAGE,ANC,base.us
+city.atl,ATLANTA,ATL,base.us
+city.bwi,BALTIMORE,BWI,base.us
+city.bos,BOSTON,BOS,base.us
+city.buf,BUFFALO,BUF,base.us
+city.chs,CHARLESTON,CHS,base.us
+city.chi,CHICAGO,CHI,base.us
+city.cvg,CINCINATI,CVG,base.us
+city.cle,CLEVELAND,CLE,base.us
+city.cmh,COLUMBUS,CMH,base.us
+city.dfw,DALLAS,DFW,base.us
+city.day,DAYTON,DAY,base.us
+city.den,DENVER,DEN,base.us
+city.dtt,DETROIT,DTT,base.us
+city.pef,EVERGLADES,PEF,base.us
+city.phl,FILADELFIA,PHL,base.us
+city.bol,HARTFORD,BOL,base.us
+city.hnl,HONOLULU,HNL,base.us
+city.hou,HOUSTON,HOU,base.us
+city.ind,INDIANAPPOLIS,IND,base.us
+city.jax,JAKSONVILLE,JAX,base.us
+city.mkc,KANSAS,MKC,base.us
+city.las,LAS VEGAS,LAS,base.us
+city.lgb,LONG BEACH,LGB,base.us
+city.lax,LOS ANGELES,LAX,base.us
+city.mem,MEMPHIS,MEM,base.us
+city.mia,MIAMI,MIA,base.us
+city.mke,MILWAUKEE,MKE,base.us
+city.msp,MINNEAPOLIS,MSP,base.us
+city.bna,NASHVILLE,BNA,base.us
+city.msy,NEW ORLEANS,MSY,base.us
+city.nyc,NEW YORK,NYC,base.us
+city.ewr,NEWARK,EWR,base.us
+city.nor,NORFOLK,NOR,base.us
+city.orl,ORLANDO,ORL,base.us
+city.phx,PHOENIX,PHX,base.us
+city.pit,PITTSBURGO,PIT,base.us
+city.pdx,PORTLAND,PDX,base.us
+city.rdu,RALEIGH,RDU,base.us
+city.ric,RICHMOND,RIC,base.us
+city.roc,ROCHESTER,ROC,base.us
+city.slc,SALT LAKE CITY,SLC,base.us
+city.san,SAN DIEGO,SAN,base.us
+city.sfo,SAN FRANCISCO,SFO,base.us
+city.sjc,SAN JOSE ( C.A.L ),SJC,base.us
+city.sav,SAVANNAH,SAV,base.us
+city.sea,SEATTLE,SEA,base.us
+city.stx,"ST. CROIX, ISLAS VIRGENES",STX,base.us
+city.stl,ST. LOUIS,STL,base.us
+city.pie,ST. PETERSBURGO,PIE,base.us
+city.stt,"ST. THOMAS, ISLAS VIRGENES",STT,base.us
+city.tpa,TAMPA,TPA,base.us
+city.tus,TUCSON,TUS,base.us
+city.van,VANCOUVER,VAN,base.us
+city.was,WASHINGTON D. C.,WAS,base.us
+city.cyr,COLONIA,CYR,base.uy
+city.mvd,MONTEVIDEO,MVD,base.uy
+city.pdp,PUNTA del ESTE,PDP,base.uy
+city.ccs,CARACAS,CCS,base.ve
+city.lag,LA GUAIRA,LAG,base.ve
+city.mar,MARACAIBO,MAR,base.ve
+city.pmv,PORLAMAR,PMV,base.ve
+city.pbl,PUERTO CABELLO,PBL,base.ve
+city.vln,VALENCIA,VLN,base.ve
+city.han,HANDI,HAN,base.vn
+city.sgn,HO CHI MINH,SGN,base.vn
+city.apw,APIA,APW,base.ws
+city.sah,SANA,SAH,base.ye
+city.ade,ADEN,ADE,base.ye
+city.beg,BELGRADO,BEG,base.yu
+city.ctw,CAPE TOWN,CTW,base.za
+city.cpt,CIUDAD DEL CABO,CPT,base.za
+city.dur,DURBAN,DUR,base.za
+city.jnb,JOHANNESBURGO,JNB,base.za
+city.pez,PORT ELIZABETH,PEZ,base.za
+city.pry,PRETORIA,PRY,base.za
+city.lun,LUSAKA,LUN,base.zm
+city.bky,BUKAVU,BKY,base.zr
+city.fih,KINSHASA,FIH,base.zr
+city.fbm,LUBUMBASHI,FBM,base.zr
+city.buq,BULAWAYO,BUQ,base.zw
+city.vfa,CATARATAS VICTORIA,VFA,base.zw
+city.hre,HARARE,HRE,base.zw

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?> 
+<openerp> 
+    <data> 
+
+        <!-- Accion para abrir forma desde lista -->
+        <record id="freight_zone_action" model="ir.actions.act_window"> 
+            <field name="name">Ciudades</field> 
+            <field name="res_model">freight.zone</field> 
+            <field name="view_type">form</field> 
+            <field name="view_mode">tree,form</field> 
+        </record> 
+  
+        <menuitem id="freight_zone_item"
+            name="Zonas"
+            parent="menu_config_shipment"
+            sequence="1" 
+            action="freight_zone_action"/> 
+          
+        <!-- Vista de Forma -->
+        <record id="edit_freight_zone" model="ir.ui.view"> 
+            <field name="name">freight.zone.form</field> 
+            <field name="model">freight.zone</field> 
+            <field name="arch" type="xml"> 
+                <form string="Zonas"> 
+                    <field name="name"/> 
+                    <field name="code"/>
+                    <field name="city_id"/> 
+                    <field name="country_id"/> 
+                </form> 
+            </field> 
+        </record> 
+  
+        <!-- Vista de Lista -->
+        <record id="view_freight_zone" model="ir.ui.view"> 
+            <field name="name">freight.zone.tree</field> 
+            <field name="model">freight.zone</field> 
+            <field name="arch" type="xml">                
+                <tree string="Ciudades"> 
+                    <field name="name"/> 
+                    <field name="code"/> 
+                </tree> 
+            </field> 
+        </record> 
+  
+    </data> 
+</openerp>

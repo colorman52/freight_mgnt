@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.sequence.type" id="freight_code_sequence">
+            <field name="name">Secuencia de Fletes Nacionales</field>
+            <field name="code">freight.sequence</field>
+        </record>
+
+        <record model="ir.sequence" id="freight_sequence">
+            <field name="name">Secuencia de los Fletes Nacionales</field>
+            <field name="code">freight.sequence</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">FLT%(y)s-</field>
+            <field name="number_increment">1</field>
+            <field name="number_next">1</field>
+            <field name="implementation">standard</field>
+            <field name="padding">3</field>
+        </record>
+
+    </data>
+</openerp>
