@@ -5,24 +5,14 @@
         <style type="text/css">
             ${css}
         </style>
-        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        <%!
-            from time import strftime
-            from time import strptime as stime
-            import datetime
-
-            def get_gantt_data (task_ids):
-                res = []
-                day = 0
-                for i in range(len(task_ids)):
-                    res.append([])
-                    res[i].append(task_ids[i].state)
-                    res[i].append(task_ids[i].name)
-                    res[i].append(task_ids[i].graph_init_date)
-                    res[i].append(task_ids[i].graph_end_date)
-                return res
-        %>
     </head>
+    <%
+        BULTO = {'box': 'Cajas',
+            'pallete': 'Palletes',
+            'cont20': 'Contenedor 20"',
+            'cont40','Contenedor 40"'
+        }
+    %>
     <body>
     	${helper.embed_image('jpeg',str(company.partner_id.image),180, auto)}
         <table class="header" style="border-bottom: 0px solid black; align:right; float:right">
@@ -44,38 +34,6 @@
             type = dict([('import','Importacion'), ('export','Exportacion'), ('domestic', 'Domestico'), ('transit', 'Transito')])
         %>
         %for o in objects:
-            <script type="text/javascript">
-                google.load("visualization", "1", {packages: ["timeline"]});
-                google.setOnLoadCallback(drawChart);
-
-                function drawChart() {
-                    var container = document.getElementById('timeline');
-                    var chart = new google.visualization.Timeline(container);
-                    var dataTable = new google.visualization.DataTable();
-
-                    dataTable.addColumn({ type: 'string', id: 'State' });
-                    dataTable.addColumn({ type: 'string', id: 'Name' });
-                    dataTable.addColumn({ type: 'date', id: 'Start' });
-                    dataTable.addColumn({ type: 'date', id: 'End' });
-                    <% data = get_gantt_data(o.task_ids) %>
-                    dataTable.addRows([
-                    %for i in range(len(data)):
-                    ['${data[i][0]}', '${data[i][1]}', new Date('${data[i][2]}'), new Date('${data[i][3]}')]${(i!=len(data)-1) and ',' or ''}
-                    %endfor
-                    ]);
-
-                    var options = { 
-                        timeline: { colorByRowLabel: true,
-                                    showRowLabels: false,
-                                    groupByRowLabel:false
-                                },
-                        height:450,
-                        width:750
-                    };
-
-                    chart.draw(dataTable, options);
-                }
-            </script>
             <% setLang(o.partner_id.lang) %>
             <br/>
             <br/>
@@ -91,95 +49,69 @@
                 <div class="act_as_cell" style="width:50%;">
                     <div class="act_as_table data_table">
                         <div class="act_as_row">
-                            <div class="act_as_cell labels" style="width:40%;">${_("Cliente")}:</div>
-                            <div class="act_as_cell">${o.partner_id.name or ''}</div>
+                            <div class="act_as_cell labels" style="width:40%;">${_("Zona Origen")}:</div>
+                            <div class="act_as_cell">${o.o.freight_gateway_id.name_get()[0][1 or ''}</div>
                         </div>
                         <div class="act_as_row">
-                            <div class="act_as_cell labels" style="width:40%;">${_("Medio Principal de Trasporte")}:</div>
-                            <div class="act_as_cell">${way[o.shipment_way] or ''}</div>
+                            <div class="act_as_cell labels" style="width:40%;">${_("Remitente")}:</div>
+                            <div class="act_as_cell">${o.sender_id.name or ''}</div>
                         </div>
                         <div class="act_as_row">
-                            <div class="act_as_cell labels" style="width:40%;">${_("Tipo de Operación")}:</div>
-                            <div class="act_as_cell">${type[o.shipment_type] or ''}</div>
+                            <div class="act_as_cell labels" style="width:40%;">${_("Domicilio")}:</div>
+                            <div class="act_as_cell">${o.sender_id.contact_address or ''}</div>
                         </div>
                         <div class="act_as_row">
-                            <div class="act_as_cell labels" style="width:40%;">${_("Origen")}:</div>
-                            <div class="act_as_cell">${o.gateway_id.name_get()[0][1] or ''}</div>
-                        </div>
-                        <div class="act_as_row">
-                            <div class="act_as_cell labels" width="40%">${_("Destino")}:</div>
-                            <div class="act_as_cell">${o.destination_id.name_get()[0][1] or ''}</div>
+                            <div class="act_as_cell labels" width="40%">${_("Km Origen")}:</div>
+                            <div class="act_as_cell">${o.start_km or ''}</div>
                         </div>
                     </div>
                 </div>
                 <div class="act_as_cell" style="width:50%;">
                     <div class="act_as_table data_table">
                         <div class="act_as_row">
-                        %if o.state != 'draft':
-                            <div class="act_as_cell labels" style="width:40%;">${_("Fecha de Inicio")}:</div>
-                            <div class="act_as_cell">${formatLang(o.initial_date, date=True)}</div>
-                        %else:
-                            <div class="act_as_cell labels" style="width:40%;">${_("Fecha Estimada de Incio")}:</div>
-                            <div class="act_as_cell">${formatLang(o.etd_date, date=True)}</div>
-                        %endif
+                            <div class="act_as_cell labels" style="width:40%;">${_("Zona Destino")}:</div>
+                            <div class="act_as_cell">${freight_destination_id.name_get()[0][1] or ''}</div>
                         </div>
                         <div class="act_as_row">
-                        %if o.state == 'done':
-                            <div class="act_as_cell labels" style="width:40%;">${_("Fecha de Finalización")}:</div>
-                            <div class="act_as_cell" align="right">${formatLang(o.final_date, date=True)}</div>
-                        %else:
-                            <div class="act_as_cell labels" style="width:40%;">${_("Fecha Estimada de Finalización")}:</div>
-                            <div class="act_as_cell" align="right">${formatLang(o.eta_date, date=True)}</div>
-                        %endif
+                            <div class="act_as_cell labels" style="width:40%;">${_("Destinatario")}:</div>
+                            <div class="act_as_cell" align="right">${o.addresse_id.name}</div>
                         </div>
                         <div class="act_as_row">
-                        %if o.total_volume:
-                            <div class="act_as_cell labels" width="40%">${_("Volumen Total")}:</div>
-                            <div class="act_as_cell">${o.total_volume}</div>
-                        %endif
+                            <div class="act_as_cell labels" width="40%">${_("Domicilio")}:</div>
+                            <div class="act_as_cell">${o.addresse_id.contact_address or ''}</div>
                         </div>
                         <div class="act_as_row">
-                        %if o.total_weight:
                             <div class="act_as_cell labels" style="width:40%;">${_("Peso Total")}:</div>
-                            <div class="act_as_cell">${o.total_weight}</div>
-                        %endif
-                        </div>
-                        <div class="act_as_row">
-                        %if o.total_chargable_weight:
-                            <div class="act_as_cell labels" style="width:40%;">${_("Peso Cargable")}:</div>
-                            <div class="act_as_cell">${o.total_chargable_weight}</div>
-                        %endif
-                        </div>
-                        <div class="act_as_row">
-                        %if o.amount_total:
-                            <div class="act_as_cell labels" style="width:40%;">${_("Valor de la Mercancia")}:</div>
-                            <div class="act_as_cell">${formatLang(o.amount_total, monetary=True)}</div>
-                        %endif
+                            <div class="act_as_cell">${o.end_km}</div>
                         </div>
                     </div>
                 </div>
-            </div>            
+            </div>
             <br/>
             <br/>
-            <div align="center" id="timeline" style="width:750px;heigth:450px;"></div>
+            <h3>Contenidos</h3>
             <div class="act_as_table list_table">
                     <div class="act_as_row labels">
-                        <div class="act_as_cell act_as_colgroup" width="40%">${_("Actividad")}</div>
-                        <div class="act_as_cell act_as_colgroup" width="15%">${_("Fecha Estimada de Inicio")}</div>
-                        <div class="act_as_cell act_as_colgroup" width="15%">${_("Fecha de Inicio")}</div>
-                        <div class="act_as_cell act_as_colgroup" width="15%">${_("Fecha Estimada de Finalización")}</div>
-                        <div class="act_as_cell act_as_colgroup" width="15%">${_("Fecha de Finalización")}</div>
+                        <div class="act_as_cell act_as_colgroup" width="10%">${_("No Bultos")}</div>
+                        <div class="act_as_cell act_as_colgroup" width="15%">${_("Tipo Bultos")}</div>
+                        <div class="act_as_cell act_as_colgroup" width="20%">${_("Contenido")}</div>
+                        <div class="act_as_cell act_as_colgroup" width="10%">${_("Peso Kg")}</div>
+                        <div class="act_as_cell act_as_colgroup" width="10%">${_("Volumen M3")}</div>
+                        <div class="act_as_cell act_as_colgroup" width="10%">${_("Peso Cargable")}</div>
+                        <div class="act_as_cell act_as_colgroup" width="15%">${_("Valor")}</div>
+                        <div class="act_as_cell act_as_colgroup" width="10%">${_("Asegurado")}</div>
                     </div>
-                % for task in o.task_ids:
-                    % if task.state != 'canceled':
-                        <div class="act_as_row lines">
-                            <div class="act_as_cell" width="40%">${task.name}</div>
-                            <div class="act_as_cell" style="width:15%; text-align:center;">${formatLang(task.date_est_start,date=True) or ''}</div>
-                            <div class="act_as_cell" style="width:15%; text-align:center;">${formatLang(task.date_start, date=True) or ''}</div>
-                            <div class="act_as_cell" style="width:15%; text-align:center;">${formatLang(task.date_estimated,date=True) or ''}</div>
-                            <div class="act_as_cell" style="width:15%; text-align:center;">${formatLang(task.date_end, date=True) or ''}</div>
-                        </div>
-                    % endif
+                % for line in o.content_ids:
+                    <div class="act_as_row lines">
+                        <div class="act_as_cell" style="width:10%; text-align:center;">${line.packages}</div>
+                        <div class="act_as_cell" width="15%">${BULTO[line.package_type]}</div>
+                        <div class="act_as_cell" width="20%">${line.name}</div>
+                        <div class="act_as_cell" style="width:10%; text-align:center;">${str(line.gross_weight * float(line.weight_type))}</div>
+                        <div class="act_as_cell" style="width:10%; text-align:center;">${str(line.volume * float(line.volume_type))}</div>
+                        <div class="act_as_cell" style="width:10%; text-align:center;">${line.chargable_weight or ''}</div>
+                        <div class="act_as_call" style="width:15%; text-align:center;">${line.amount or ''}</div>
+                        <div class="act_as_call" style="width:10%; text-align:center;">${'Si' if line.insured else 'No'}</div>
+                    </div>
                 % endfor
             </div>
             <br/>

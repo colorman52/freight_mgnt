@@ -14,7 +14,7 @@
 #    GNU Affero General Public License as published by the Free Software Foundation, either version
 #    3 of the License, or (at your option) any later version.
 #
-#    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+#    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
 #    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #    See the GNU Affero General Public License for more details.
 #
@@ -27,23 +27,69 @@ from openerp.osv import osv, fields
 from datetime import datetime
 from openerp.tools.translate import _
 
+def location_name_search(self, cr, user, name='', args=None, operator='ilike', context=None, limit=100):
+    if not args:
+        args = []
+
+    ids = []
+    if len(name) in [2,3]:
+        ids = self.search(cr, user, [('code', 'ilike', name)] + args, limit=limit, context=context)
+
+    search_domain = [('name', operator, name)]
+    if ids: search_domain.append(('id', 'not in', ids))
+    ids.extend(self.search(cr, user, search_domain + args, limit=limit, context=context))
+
+    locations = self.name_get(cr, user, ids, context)
+    return sorted(locations, key=lambda (id, name): ids.index(id))
+
 class freight_zone(osv.osv):
+    """
+    Modelo en donde se guardaran los puertos y aeropuertos en donde la mercacia podra tocar puerta
+    segun el usuario, generlmente esto esta representado por el codigo IATA incluso si se habla de
+    un puerto
+    """
 
     _name = 'freight.zone'
 
-    _inherit = 'shipment.city'
+    _description = "Ciudades IATA"
 
-    _description = 'Zonas de Envio'
+    def create(self, cursor, user, vals, context=None):
+        if vals.get('code'):
+            vals['code'] = vals['code'].upper()
+        return super(shipment_city, self).create(cursor, user, vals, context=context)
+
+    def name_get(self, cursor, uid, ids, context=None):
+        res = []
+        for city in self.browse(cursor, uid, ids):
+            name=city.name+' ('+city.code+')'
+            res.append((city.id, name))
+        return res
 
     _columns = {
-        'city_id' : fields.many2one ('shipment.city', 'Ciudad',
-            required = True),
-        'country_id' : fields.related('city_id','country_id',
+        'name': fields.char('Nombre',
+            size=50,
+            required=True),
+        'code': fields.char('Codigo',
+            size=3,
+            required=True,
+            help='Codigo de 3 letras para la ciudad, usualmente el codigo IATA'),
+        'state_id': fields.many2one('res.country.state',
+            )
+        'country': fields.related('state_id','country_id',
             type='many2one',
             relation='shipment.city',
             string='País',
             store=False)
     }
+
+    _sql_constraints = [
+        ('code_name_uniq', 'unique (code, name)', 'El codigo de la Ciudad debe ser unico!')
+    ]
+
+    _order = 'code'
+
+    name_search = location_name_search
+
 
 class freight_content(osv.osv):
     """
@@ -80,7 +126,7 @@ class freight(osv.osv):
         return res
 
     def _get_code_flr(self, cr, uid, context, *args):
-        obj_sequence = self.pool.get('ir.sequence')    
+        obj_sequence = self.pool.get('ir.sequence')
         return obj_sequence.next_by_code(cr, uid, 'freight.sequence', context=context)
 
     def create(self, cursor, user, vals, context=None):
@@ -121,7 +167,7 @@ class freight(osv.osv):
             store=False,
             type='float',
             method=True,
-            readonly=True, 
+            readonly=True,
             help="Egresos brutos por el embarque en moneda de la empresa"),
         'customs' : field.char('Aduana',
             size=64,

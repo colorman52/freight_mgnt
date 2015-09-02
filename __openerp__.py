@@ -13,7 +13,7 @@
 #    GNU Affero General Public License as published by the Free Software Foundation, either version
 #    3 of the License, or (at your option) any later version.
 #
-#    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+#    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
 #    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #    See the GNU Affero General Public License for more details.
 #
@@ -49,8 +49,13 @@ Visite a DLK Business: http://www.dlkbusiness.com
 	'active': False,
 	'installable': True,
 	'demo_xml': [],
-	'init_xml': [		
+	'init_xml': [
+		'data/freight.zone.csv',
+		'ir.sequence.xml'
 	],
 	'update_xml': [
+		'view/freight_zone_view.xml',
+		'view/freight_view.xml',
+		'report/freight_basic_info.xml'
 	]
 }

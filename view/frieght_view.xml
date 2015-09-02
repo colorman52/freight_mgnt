@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?> 
-<openerp> 
-    <data> 
-    
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
         <!-- vista de formulario -->
         <record id="view_freight_form" model="ir.ui.view">
-            <field name="name">shipment.freight.form</field> 
-            <field name="model">shipment.shipment</field> 
+            <field name="name">shipment.freight.form</field>
+            <field name="model">shipment.shipment</field>
             <field name="inherit_id" ref="shipment.view_shipment_form"/>
             <field name="arch" type="xml">
                 <field name="gateway_id" position="after">
@@ -16,17 +16,11 @@
                     <field name="freight_destination_id" attrs="{'visible':[('shipment_type','=','domestic')]}"/>
                     <field name="addresse_id" attrs="{'visible':[('shipment_type','=','domestic')]}"/>
                 </field>
-                <field name="gateway_id" position="attributes">
-                    <attribute name="visible">[('shipment_type','!=','domestic')]</attribute>
-                </field>
-                <field name="destination_id" position="attributes">
-                    <attribute name="visible">[('shipment_type','!=','domestic')]</attribute>
-                </field>
                 <xpath expr="//field[@name='content_ids']/tree/field[@name='currency_id']" position="after">
                     <field name="insured"/>
                 </xpath>
             </field>
         </record>
 
-    </data> 
+    </data>
 </openerp>
