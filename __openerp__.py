@@ -43,7 +43,8 @@ Visite a DLK Business: http://www.dlkbusiness.com
 		'sale',
 		'portal_anonymous',
 		'report_webkit',
-		'shipment_tracking'
+		'shipment_tracking',
+		'l10n_mx_states'
 	],
 	'category': 'Logistics',
 	'active': False,
@@ -51,11 +52,11 @@ Visite a DLK Business: http://www.dlkbusiness.com
 	'demo_xml': [],
 	'init_xml': [
 		'data/freight.zone.csv',
-		'ir.sequence.xml'
+		'data/ir.sequence.xml'
 	],
 	'update_xml': [
 		'view/freight_zone_view.xml',
-		'view/freight_view.xml',
+		'view/frieght_view.xml',
 		'report/freight_basic_info.xml'
 	]
 }

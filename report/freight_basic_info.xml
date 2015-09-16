@@ -6,7 +6,7 @@
                 id="freight_info"
                 model="shipment.shipment"
                 name="freight.basic.info"
-                file="feight/report/freight_basic_html.mako"
+                file="freight_mgnt/report/freight_basic_html.mako"
                 string="Carta Porte"
                 report_type="webkit"
                 webkit_header="shipment_tracking.ir_header_webkit_shipment"
@@ -18,7 +18,7 @@
             <field name="name">webkit_freight_header</field>
             <field name="fields_id" ref="report_webkit.field_ir_act_report_xml_webkit_header"/>
             <field eval="'ir.header_webkit,'+str(ref('shipment_tracking.ir_header_webkit_shipment'))" model="ir.header_webkit" name="value"/>
-            <field eval="'ir.actions.report.xml,'+str(ref('freight_management.freight_basic_info'))" model="ir.actions.report.xml" name="res_id"/>
+            <field eval="'ir.actions.report.xml,'+str(ref('freight_mgnt.freight_info'))" model="ir.actions.report.xml" name="res_id"/>
         </record>
 
         <!-- <record id="shipment_baic_info_tamplate" model="email.template">

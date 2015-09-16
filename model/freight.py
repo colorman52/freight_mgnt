@@ -32,7 +32,7 @@ def location_name_search(self, cr, user, name='', args=None, operator='ilike', c
         args = []
 
     ids = []
-    if len(name) in [2,3]:
+    if len(name) in [4,5]:
         ids = self.search(cr, user, [('code', 'ilike', name)] + args, limit=limit, context=context)
 
     search_domain = [('name', operator, name)]
@@ -51,33 +51,29 @@ class freight_zone(osv.osv):
 
     _name = 'freight.zone'
 
-    _description = "Ciudades IATA"
-
-    def create(self, cursor, user, vals, context=None):
-        if vals.get('code'):
-            vals['code'] = vals['code'].upper()
-        return super(shipment_city, self).create(cursor, user, vals, context=context)
+    _description = "Zonas Codigo Postal"
 
     def name_get(self, cursor, uid, ids, context=None):
         res = []
         for city in self.browse(cursor, uid, ids):
-            name=city.name+' ('+city.code+')'
+            name=city.code+' '+city.name
             res.append((city.id, name))
         return res
 
     _columns = {
         'name': fields.char('Nombre',
-            size=50,
+            size=64,
             required=True),
         'code': fields.char('Codigo',
-            size=3,
+            size=5,
             required=True,
-            help='Codigo de 3 letras para la ciudad, usualmente el codigo IATA'),
-        'state_id': fields.many2one('res.country.state',
-            )
+            help='Codigo de 5 digitos para la zona, usualmente el codigo postal'),
+        'state_id': fields.many2one('res.country.state', 'Estado',
+		required=True,
+		readonly=False),
         'country': fields.related('state_id','country_id',
             type='many2one',
-            relation='shipment.city',
+            relation='res.country',
             string='País',
             store=False)
     }
@@ -130,16 +126,10 @@ class freight(osv.osv):
         return obj_sequence.next_by_code(cr, uid, 'freight.sequence', context=context)
 
     def create(self, cursor, user, vals, context=None):
-        if vals.get("shipment_type") == 'domestic':
-            vals['name'] = self._get_code_flr(cursor, user, context=context)
-        else:
-            if vals.get("consolidated") and (not vals.get("parent_id", True) or vals.get("child_ids", False)):
-                vals['name'] = self._get_code_master(cursor, user, context=context)
-            elif vals['forwarder']:
-                vals['name'] = self._get_code_forwarder(cursor, user, context=context)
-            else:
-                vals['name'] = self._get_code_dlk(cursor, user, context=context)
-        return super(shipment, self).create(cursor, user, vals, context=context)
+	if not vals.get('name'):
+	    if vals.get("shipment_type") == 'domestic':
+            	vals['name'] = self._get_code_flr(cursor, user, context=context)
+        return super(freight,self).create(cursor,user,vals,context=context)
 
     _columns = {
         'freight_gateway_id': fields.many2one('freight.zone', 'Origen',
@@ -169,14 +159,14 @@ class freight(osv.osv):
             method=True,
             readonly=True,
             help="Egresos brutos por el embarque en moneda de la empresa"),
-        'customs' : field.char('Aduana',
+        'customs' : fields.char('Aduana',
             size=64,
             readonly=True,
             states={'draft':[('readonly',False)]}),
         'customs_declaration' : fields.many2one('account.invoice', 'Pedimento',
             readonly=True,
             states={'draft':[('readonly',False)]}),
-        'operator' : fields.many2one('base.partner', 'Operador',
+        'operator' : fields.many2one('res.partner', 'Operador',
             readonly = True,
             states={'draft':[('readonly',False)]},
             groups='shipment_tracking.group_shipment_user, portal.group_portal'),

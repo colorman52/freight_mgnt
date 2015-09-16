@@ -12,7 +12,7 @@
   
         <menuitem id="freight_zone_item"
             name="Zonas"
-            parent="menu_config_shipment"
+            parent="shipment_tracking.menu_config_shipment"
             sequence="1" 
             action="freight_zone_action"/> 
           
@@ -24,8 +24,8 @@
                 <form string="Zonas"> 
                     <field name="name"/> 
                     <field name="code"/>
-                    <field name="city_id"/> 
-                    <field name="country_id"/> 
+                    <field name="state_id"/> 
+                    <field name="country"/> 
                 </form> 
             </field> 
         </record> 
@@ -35,9 +35,10 @@
             <field name="name">freight.zone.tree</field> 
             <field name="model">freight.zone</field> 
             <field name="arch" type="xml">                
-                <tree string="Ciudades"> 
-                    <field name="name"/> 
+                <tree string="Zonas por Codigo Postal"> 
                     <field name="code"/> 
+                    <field name="name"/>
+		    <field name="state_id"/> 
                 </tree> 
             </field> 
         </record> 

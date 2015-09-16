@@ -7,11 +7,7 @@
         </style>
     </head>
     <%
-        BULTO = {'box': 'Cajas',
-            'pallete': 'Palletes',
-            'cont20': 'Contenedor 20"',
-            'cont40','Contenedor 40"'
-        }
+        BULTO = {'box':'Cajas', 'pallete':'Palletes', 'cont20':'Contenedor 20"', 'cont40':'Contenedor 40"'}
     %>
     <body>
     	${helper.embed_image('jpeg',str(company.partner_id.image),180, auto)}
@@ -50,7 +46,7 @@
                     <div class="act_as_table data_table">
                         <div class="act_as_row">
                             <div class="act_as_cell labels" style="width:40%;">${_("Zona Origen")}:</div>
-                            <div class="act_as_cell">${o.o.freight_gateway_id.name_get()[0][1 or ''}</div>
+                            <div class="act_as_cell">${o.freight_gateway_id.name or ''}</div>
                         </div>
                         <div class="act_as_row">
                             <div class="act_as_cell labels" style="width:40%;">${_("Remitente")}:</div>
@@ -70,7 +66,7 @@
                     <div class="act_as_table data_table">
                         <div class="act_as_row">
                             <div class="act_as_cell labels" style="width:40%;">${_("Zona Destino")}:</div>
-                            <div class="act_as_cell">${freight_destination_id.name_get()[0][1] or ''}</div>
+                            <div class="act_as_cell">${o.freight_destination_id.name or ''}</div>
                         </div>
                         <div class="act_as_row">
                             <div class="act_as_cell labels" style="width:40%;">${_("Destinatario")}:</div>

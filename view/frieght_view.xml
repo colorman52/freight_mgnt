@@ -6,15 +6,17 @@
         <record id="view_freight_form" model="ir.ui.view">
             <field name="name">shipment.freight.form</field>
             <field name="model">shipment.shipment</field>
-            <field name="inherit_id" ref="shipment.view_shipment_form"/>
+            <field name="inherit_id" ref="shipment_tracking.view_shipment_form"/>
             <field name="arch" type="xml">
                 <field name="gateway_id" position="after">
-                    <field name="freight_gateway_id" attrs="{'visible':[('shipment_type','=','domestic')]}"/>
-                    <field name="sender_id" attrs="{'visible':[('shipment_type','=','domestic')]}"/>
+                    <field name="freight_gateway_id" attrs="{'invisible':[('shipment_type','!=','domestic')]}"/>
+                    <field name="sender_id" attrs="{'invisible':[('shipment_type','!=','domestic')]}"/>
+		    <field name="start_km"/>
                 </field>
                 <field name="destination_id" position="after">
-                    <field name="freight_destination_id" attrs="{'visible':[('shipment_type','=','domestic')]}"/>
-                    <field name="addresse_id" attrs="{'visible':[('shipment_type','=','domestic')]}"/>
+                    <field name="freight_destination_id" attrs="{'invisible':[('shipment_type','!=','domestic')]}"/>
+                    <field name="addresse_id" attrs="{'invisible':[('shipment_type','!=','domestic')]}"/>
+		    <field name="end_km"/>
                 </field>
                 <xpath expr="//field[@name='content_ids']/tree/field[@name='currency_id']" position="after">
                     <field name="insured"/>
