@@ -11,12 +11,13 @@
                 <field name="gateway_id" position="after">
                     <field name="freight_gateway_id" attrs="{'invisible':[('shipment_type','!=','domestic')]}"/>
                     <field name="sender_id" attrs="{'invisible':[('shipment_type','!=','domestic')]}"/>
-		    <field name="start_km"/>
+		            <field name="start_km"/>
+                    <field name="total_km"/>
                 </field>
                 <field name="destination_id" position="after">
                     <field name="freight_destination_id" attrs="{'invisible':[('shipment_type','!=','domestic')]}"/>
                     <field name="addresse_id" attrs="{'invisible':[('shipment_type','!=','domestic')]}"/>
-		    <field name="end_km"/>
+                    <field name="end_km"/>
                 </field>
                 <xpath expr="//field[@name='content_ids']/tree/field[@name='currency_id']" position="after">
                     <field name="insured"/>

@@ -132,11 +132,11 @@ class freight(osv.osv):
         return super(freight,self).create(cursor,user,vals,context=context)
 
     _columns = {
-        'freight_gateway_id': fields.many2one('freight.zone', 'Origen',
+        'freight_gateway_id': fields.many2one('freight.zone', 'Zona Origen',
             required=False,
             readonly=True,
             states={'draft':[('readonly',False)]}),
-        'freight_destination_id': fields.many2one('freight.zone', 'Destino',
+        'freight_destination_id': fields.many2one('freight.zone', 'Zona Destino',
             required=False,
             readonly=True,
             states={'draft':[('readonly',False)]}),

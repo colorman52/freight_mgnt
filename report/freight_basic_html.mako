@@ -41,9 +41,9 @@
                 ${_("Referencia de Cliente")}: ${o.partner_ref or ''}
             </h3>
             <br/>
-   	    <div class="act_as_table list_table" style="width:98%;">
+   	    <div class="act_as_table">
                 <div class="act_as_cell" style="width:50%;">
-                    <div class="act_as_table data_table">
+                    <div class="act_as_table list_table">
                         <div class="act_as_row">
                             <div class="act_as_cell labels" style="width:40%;">${_("Zona Origen")}:</div>
                             <div class="act_as_cell">${o.freight_gateway_id.name or ''}</div>
@@ -77,7 +77,7 @@
                             <div class="act_as_cell">${o.addresse_id.contact_address or ''}</div>
                         </div>
                         <div class="act_as_row">
-                            <div class="act_as_cell labels" style="width:40%;">${_("Peso Total")}:</div>
+                            <div class="act_as_cell labels" style="width:40%;">${_("Km Destino")}:</div>
                             <div class="act_as_cell">${o.end_km}</div>
                         </div>
                     </div>
@@ -86,29 +86,43 @@
             <br/>
             <br/>
             <h3>Contenidos</h3>
-            <div class="act_as_table list_table">
+            <div class="act_as_table data_table">
+                <div class="act_as_thead">
                     <div class="act_as_row labels">
-                        <div class="act_as_cell act_as_colgroup" width="10%">${_("No Bultos")}</div>
-                        <div class="act_as_cell act_as_colgroup" width="15%">${_("Tipo Bultos")}</div>
-                        <div class="act_as_cell act_as_colgroup" width="20%">${_("Contenido")}</div>
-                        <div class="act_as_cell act_as_colgroup" width="10%">${_("Peso Kg")}</div>
-                        <div class="act_as_cell act_as_colgroup" width="10%">${_("Volumen M3")}</div>
-                        <div class="act_as_cell act_as_colgroup" width="10%">${_("Peso Cargable")}</div>
-                        <div class="act_as_cell act_as_colgroup" width="15%">${_("Valor")}</div>
-                        <div class="act_as_cell act_as_colgroup" width="10%">${_("Asegurado")}</div>
+                        <div class="act_as_cell act_as_colgroup labels" width="7%">${_("No Bultos")}</div>
+                        <div class="act_as_cell act_as_colgroup labels" width="15%">${_("Tipo Bultos")}</div>
+                        <div class="act_as_cell act_as_colgroup labels">${_("Contenido")}</div>
+                        <div class="act_as_cell act_as_colgroup labels" width="10%">${_("Peso Kg")}</div>
+                        <div class="act_as_cell act_as_colgroup labels" width="10%">${_("Volumen M3")}</div>
+                        <div class="act_as_cell act_as_colgroup labels" width="10%">${_("Peso Cargable")}</div>
+                        <div class="act_as_cell act_as_colgroup labels" width="15%">${_("Valor")}</div>
+                        <div class="act_as_cell act_as_colgroup labels" width="7%">${_("Asegurado")}</div>
                     </div>
+                </div>
+                <div class="act_as_tbody">
                 % for line in o.content_ids:
                     <div class="act_as_row lines">
-                        <div class="act_as_cell" style="width:10%; text-align:center;">${line.packages}</div>
-                        <div class="act_as_cell" width="15%">${BULTO[line.package_type]}</div>
-                        <div class="act_as_cell" width="20%">${line.name}</div>
-                        <div class="act_as_cell" style="width:10%; text-align:center;">${str(line.gross_weight * float(line.weight_type))}</div>
-                        <div class="act_as_cell" style="width:10%; text-align:center;">${str(line.volume * float(line.volume_type))}</div>
+                        <div class="act_as_cell" style="width:7%; text-align:center;">${line.packages or ''}</div>
+                        <div class="act_as_cell" width="15%">${BULTO[line.package_type] or ''}</div>
+                        <div class="act_as_cell">${line.name or ''}</div>
+                        <div class="act_as_cell" style="width:10%; text-align:center;">${str(line.gross_weight * float(line.weight_type)) or ''}</div>
+                        <div class="act_as_cell" style="width:10%; text-align:center;">${str(line.volume * float(line.volume_type)) or ''}</div>
                         <div class="act_as_cell" style="width:10%; text-align:center;">${line.chargable_weight or ''}</div>
                         <div class="act_as_call" style="width:15%; text-align:center;">${line.amount or ''}</div>
-                        <div class="act_as_call" style="width:10%; text-align:center;">${'Si' if line.insured else 'No'}</div>
+                        <div class="act_as_call" style="width:7%; text-align:center;">${'Si' if line.insured else 'No'}</div>
                     </div>
                 % endfor
+                </div>
+                <div class="act_as_tfoot">
+                    <div class="act_as_cell" style="width:7%; text-align:center;"></div>
+                    <div class="act_as_cell" width="15%"></div>
+                    <div class="act_as_cell"></div>
+                    <div class="act_as_cell" style="width:10%; text-align:center;">${o.total_weight or ''}</div>
+                    <div class="act_as_cell" style="width:10%; text-align:center;">${o.total_volume or ''}</div>
+                    <div class="act_as_cell" style="width:10%; text-align:center;">${o.totalchargable_weight or ''}</div>
+                    <div class="act_as_call" style="width:15%; text-align:center;">${_("MXN $") + (o.amount_total or '')}</div>
+                    <div class="act_as_call" style="width:7%; text-align:center;"></div>
+                </div>
             </div>
             <br/>
             <br/>
