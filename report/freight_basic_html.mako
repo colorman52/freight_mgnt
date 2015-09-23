@@ -41,7 +41,7 @@
                 ${_("Referencia de Cliente")}: ${o.partner_ref or ''}
             </h3>
             <br/>
-   	    <div class="act_as_table">
+   	    <div class="act_as_table list_table">
                 <div class="act_as_cell" style="width:50%;">
                     <div class="act_as_table list_table">
                         <div class="act_as_row">
@@ -108,8 +108,8 @@
                         <div class="act_as_cell" style="width:10%; text-align:center;">${str(line.gross_weight * float(line.weight_type)) or ''}</div>
                         <div class="act_as_cell" style="width:10%; text-align:center;">${str(line.volume * float(line.volume_type)) or ''}</div>
                         <div class="act_as_cell" style="width:10%; text-align:center;">${line.chargable_weight or ''}</div>
-                        <div class="act_as_call" style="width:15%; text-align:center;">${line.amount or ''}</div>
-                        <div class="act_as_call" style="width:7%; text-align:center;">${'Si' if line.insured else 'No'}</div>
+                        <div class="act_as_cell" style="width:15%; text-align:center;">${line.amount or ''}</div>
+                        <div class="act_as_cell" style="width:7%; text-align:center;">${'Si' if line.insured else 'No'}</div>
                     </div>
                 % endfor
                 </div>
@@ -119,9 +119,9 @@
                     <div class="act_as_cell"></div>
                     <div class="act_as_cell" style="width:10%; text-align:center;">${o.total_weight or ''}</div>
                     <div class="act_as_cell" style="width:10%; text-align:center;">${o.total_volume or ''}</div>
-                    <div class="act_as_cell" style="width:10%; text-align:center;">${o.totalchargable_weight or ''}</div>
-                    <div class="act_as_call" style="width:15%; text-align:center;">${_("MXN $") + (o.amount_total or '')}</div>
-                    <div class="act_as_call" style="width:7%; text-align:center;"></div>
+                    <div class="act_as_cell" style="width:10%; text-align:center;">${o.total_chargable_weight or ''}</div>
+                    <div class="act_as_cell" style="width:15%; text-align:center;">${_("MXN $") + (o.amount_total or '')}</div>
+                    <div class="act_as_cell" style="width:7%; text-align:center;"></div>
                 </div>
             </div>
             <br/>
