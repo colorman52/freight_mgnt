@@ -40,7 +40,12 @@
             <h3>
                 ${_("Referencia de Cliente")}: ${o.partner_ref or ''}
             </h3>
+<<<<<<< HEAD
             <div class="act_as_table list_table">
+=======
+            <br/>
+   	    <div class="act_as_table list_table">
+>>>>>>> ded6136e556568b8f34d31b59b88c4b9bf69557e
                 <div class="act_as_cell" style="width:50%;">
                     <div class="act_as_table data_table">
                         <div class="act_as_row">
@@ -125,7 +130,11 @@
                     <div class="act_as_cell" style="width:10%; text-align:center;">${o.total_weight or ''}</div>
                     <div class="act_as_cell" style="width:10%; text-align:center;">${o.total_volume or ''}</div>
                     <div class="act_as_cell" style="width:10%; text-align:center;">${o.total_chargable_weight or ''}</div>
+<<<<<<< HEAD
                     <div class="act_as_cell" style="width:15%; text-align:center;">${_("MXN $")} ${o.amount_total or ''}</div>
+=======
+                    <div class="act_as_cell" style="width:15%; text-align:center;">${_("MXN $") + (o.amount_total or '')}</div>
+>>>>>>> ded6136e556568b8f34d31b59b88c4b9bf69557e
                     <div class="act_as_cell" style="width:7%; text-align:center;"></div>
                 </div>
             </div>
