@@ -16,7 +16,7 @@
                 <td><b>${company.partner_id.name |entity}</b></td>
             </tr>
             <tr>
-                <td >${company.partner_id.street or ''|entity} ${companycompany.partner_id.street2 or ''|entity</td>
+                <td >${company.partner_id.street or ''|entity} ${company.partner_id.street2 or ''|entity}</td>
             </tr>
             <tr>
                 <td>Telefono: ${company.partner_id.phone or ''|entity} </td>
@@ -35,17 +35,12 @@
             <br/>
             <br/>
             <h2 align="center">
-                ${_("Cata Porte")}: ${o.name or ''}
+                ${_("Carta Porte")}: ${o.name or ''}
             </h2>
             <h3>
                 ${_("Referencia de Cliente")}: ${o.partner_ref or ''}
             </h3>
-<<<<<<< HEAD
             <div class="act_as_table list_table">
-=======
-            <br/>
-   	    <div class="act_as_table list_table">
->>>>>>> ded6136e556568b8f34d31b59b88c4b9bf69557e
                 <div class="act_as_cell" style="width:50%;">
                     <div class="act_as_table data_table">
                         <div class="act_as_row">
@@ -68,6 +63,14 @@
                             <div class="act_as_cell labels" width="40%">${_("Km Origen")}:</div>
                             <div class="act_as_cell">${o.start_km or ''}</div>
                         </div>
+			<div class="act_as_row">
+			    <div class="act_as_cell labels" width="40%">${_("Km Totales")}</div>
+			    <div class="act_as_cell">${o.total_km or ''}</div>
+			</div>
+			<div clas="act_as_row">
+			    <div class="act_as_cell labels" style="width:40%;">${_("Aduana")}</div>
+			    <div class="act_as_cell">${o.customs or ''}</div>
+			</div>
                     </div>
                 </div>
                 <div class="act_as_cell" style="width:50%;">
@@ -78,20 +81,28 @@
                         </div>
                         <div class="act_as_row">
                             <div class="act_as_cell labels" style="width:40%;">${_("Destinatario")}:</div>
-                            <div class="act_as_cell" align="right">${o.addresse_id.name}</div>
+                            <div class="act_as_cell" align="right">${o.addresse_id.name or ''}</div>
                         </div>
                         <div class="act_as_row">
                             <div class="act_as_cell labels" style="width:40%;">${_("Teléfono")}:</div>
                             <div class="act_as_cell">${o.addresse_id.phone or ''}</div>
                         </div>
                         <div class="act_as_row">
-                            <div class="act_as_cell labels" width="40%" height="40px">${_("Domicilio")}:</div>
+                            <div class="act_as_cell labels" style="width:40%;height:40px">${_("Domicilio")}:</div>
                             <div class="act_as_cell">${o.addresse_id.contact_address or ''}</div>
                         </div>
                         <div class="act_as_row">
                             <div class="act_as_cell labels" style="width:40%;">${_("Km Destino")}:</div>
-                            <div class="act_as_cell">${o.end_km}</div>
+                            <div class="act_as_cell">${o.end_km or ''}</div>
                         </div>
+			<div class="act_as_row">
+			    <div class="act_as_cell labels" style="width:40%;">${_("Chofer")}</div>
+			    <div class="act_as_cell">${o.operator.id or ''}</div>
+			</div>
+			<div class="act_as_row">
+			    <div class="act_as_cell labels" style="width:40%;">${_("Pedimento")}</div>
+			    <div class="act_as_cell">${o.customs_declaration.name or ''}</div>
+			</div>
                     </div>
                 </div>
             </div>
@@ -124,17 +135,13 @@
                 % endfor
                 </div>
                 <div class="act_as_tfoot">
-                    <div class="act_as_cell" style="width:7%; text-align:center;"></div>
+                    <div class="act_as_cell labels" style="width:7%;">Total</div>
                     <div class="act_as_cell" width="15%"></div>
                     <div class="act_as_cell"></div>
                     <div class="act_as_cell" style="width:10%; text-align:center;">${o.total_weight or ''}</div>
                     <div class="act_as_cell" style="width:10%; text-align:center;">${o.total_volume or ''}</div>
                     <div class="act_as_cell" style="width:10%; text-align:center;">${o.total_chargable_weight or ''}</div>
-<<<<<<< HEAD
                     <div class="act_as_cell" style="width:15%; text-align:center;">${_("MXN $")} ${o.amount_total or ''}</div>
-=======
-                    <div class="act_as_cell" style="width:15%; text-align:center;">${_("MXN $") + (o.amount_total or '')}</div>
->>>>>>> ded6136e556568b8f34d31b59b88c4b9bf69557e
                     <div class="act_as_cell" style="width:7%; text-align:center;"></div>
                 </div>
             </div>
@@ -148,18 +155,18 @@
             <br/>
             <div class="act_as_table list_table">
                 <div class="act_as_row">
-                    <div class="act_as_cell" style="width:40%;text-align:center;border-bottom:2pt"><b>Acepto Términos y Condiciones</b><br/></div>
-                    <div class="act_as_cell" style="width:20%;"><br/></div>
-                    <div class="act_as_cell" style="width:40%;text-align:center;border-bottom:2pt"><b>Recibo de Conformidad de Mercancías</b><br/></div>
+                    <div class="act_as_cell" style="width:40%;text-align:center;border-bottom:solid 2px;height:2cm;"><b>Acepto Términos y Condiciones</b></div>
+                    <div class="act_as_cell" style="width:20%;"></div>
+                    <div class="act_as_cell" style="width:40%;text-align:center;border-bottom:solid 2px;height:2cm;"><b>Recibo de Conformidad de Mercancías</b></div>
                 </div>
                 <div class="act_as_row">
-                    <div class="act_as_cell" style="width:40%;text-align:center;border-bottom:2pt">Firma<br/></div>
-                    <div class="act_as_cell" style="width:20%;"><br/></div>
-                    <div class="act_as_cell" style="width:40%;text-align:center;border-bottom:2pt">Firma<br/></div>
+                    <div class="act_as_cell" style="width:40%;text-align:center;border-bottom:solid 2px;height:2cm;">Firma</div>
+                    <div class="act_as_cell" style="width:20%;"></div>
+                    <div class="act_as_cell" style="width:40%;text-align:center;border-bottom:solid 2px;height:2cm;">Firma</div>
                 </div>
                 <div class="act_as_row">
-                    <div class="act_as_cell" style="width:40%;text-align:center;border-bottom:2pt">Nombre<br/></div>
-                    <div class="act_as_cell" style="width:20%;"><br/></div>
+                    <div class="act_as_cell" style="width:40%;text-align:center;border-bottom:solid 2px;height:2cm;">Nombre</div>
+                    <div class="act_as_cell" style="width:20%;"></div>
                     <div class="act_as_cell" style="width:40%;text-align:center;">Nombre<br/></div>
                 </div>
                 <div class="act_as_row">
@@ -168,7 +175,7 @@
                     <div class="act_as_cell" style="width:40%;"></div>
                 </div>
             </div>
-        % endfor
+        %endfor
     </div>
     </body>
 </html>

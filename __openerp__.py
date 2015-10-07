@@ -57,6 +57,7 @@ Visite a DLK Business: http://www.dlkbusiness.com
 	'update_xml': [
 		'view/freight_zone_view.xml',
 		'view/frieght_view.xml',
-		'report/freight_basic_info.xml'
+		'report/freight_basic_info.xml',
+		'security/ir.model.access.csv'
 	]
 }

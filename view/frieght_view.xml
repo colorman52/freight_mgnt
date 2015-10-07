@@ -11,13 +11,16 @@
                 <field name="gateway_id" position="after">
                     <field name="freight_gateway_id"/>
                     <field name="sender_id"/>
-		            <field name="start_km"/>
+		    <field name="customs"/>
+		    <field name="start_km"/>
                     <field name="total_km"/>
                 </field>
                 <field name="destination_id" position="after">
                     <field name="freight_destination_id"/>
                     <field name="addresse_id"/>
+		    <field name="customs_declaration"/>
                     <field name="end_km"/>
+		    <field name="operator"/>
                 </field>
                 <xpath expr="//field[@name='content_ids']/tree/field[@name='currency_id']" position="after">
                     <field name="insured"/>
